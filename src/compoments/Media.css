@@ -5,8 +5,9 @@
 
 /* Mobiles */
 @media only screen and (min-width: 200px) and (max-width: 767px){
+   
     input[type=text]{
-        width: 98px;
+        width: 50%;
     }
    
     input[type=text]:focus{
@@ -43,12 +44,11 @@
     
     input[type=text]{
         width: 98px;
+        font-size: 20px;
        
     }
    
-    input[type=text]:focus{
-        width: 74%;
-    }
+    
 
     .search-btn{
         width: 3rem;

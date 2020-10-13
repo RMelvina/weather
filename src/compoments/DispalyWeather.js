@@ -23,11 +23,13 @@ function DispalyWeather(props) {
         // style={{
         //     visibility: props.main ? 'visible' : 'hidden'
         // }}
-        <section className="container-fluid">
+        <section className="container-fluid" style={{
+            visibility: props.main ? 'visible' : 'hidden'
+        }}>
             
             <div className="row justify-content-center mt-5">
-                <div className="col-lg-6 col-md-8 col-sm-8 col-12 weather-container">
-                <h1>{props.cityName}</h1>
+                <div className="col-lg-6 col-md-8 col-sm-8 col-12 weather-container ">
+                <h1 className="city_name_font">{props.cityName}</h1>
                 
                 <div className="container">
               

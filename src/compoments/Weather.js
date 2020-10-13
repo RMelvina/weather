@@ -21,7 +21,6 @@ export class Weather extends Component {
 
         this.state = {
             inputValue: '',
-           
             city: '',
             temp: '36',
             sunRise: '',
@@ -31,8 +30,6 @@ export class Weather extends Component {
             icon: '',
             main: false,
             showBtn: false
-            // icon: undefined,
-            // main: false
         }
 
         this.weatherIcons = {
@@ -49,9 +46,19 @@ export class Weather extends Component {
     
        
         }
+        this.onKeyUp = this.onKeyUp.bind(this);
+
       
     }
 
+    onKeyUp = (event) => {
+        if (event.charCode === 13) {
+         console.log("Enter is clicked")
+         this.getWeatherData()
+              
+          
+        }
+    }
 
 
     get_weatherIcons = ( rangeId) => {
@@ -84,17 +91,10 @@ export class Weather extends Component {
 
     }
 
-   
-
-    
-
-    
-
     input = (e) => {
-        this.setState({
+        this.setState({ 
             inputValue: e.target.value,
-            showBtn: true
-        })
+            showBtn: true });
         
     }
 
@@ -162,7 +162,6 @@ export class Weather extends Component {
     }
 
 
-
     render() {
         return (
             <div>
@@ -170,6 +169,7 @@ export class Weather extends Component {
                     value={this.state.inputValue}
                     onChange={e => this.input(e)}
                     onClick={this.getWeatherData}
+                    onKeyPress={this.onKeyUp} 
                     showBtn={this.state.showBtn} />
 
                 <DispalyWeather
