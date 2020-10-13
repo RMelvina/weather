@@ -1,15 +1,12 @@
 /* iPad Pro/ iPad */
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-    .weather-container{
-      
-    }
+   
 }
 
 /* Mobiles */
 @media only screen and (min-width: 200px) and (max-width: 767px){
     input[type=text]{
         width: 98px;
-       
     }
    
     input[type=text]:focus{
@@ -20,6 +17,25 @@
         width: 3rem;
         height:3.3rem;
    }
+    .weather-container{
+        height: fit-content;
+        max-width: 90vw;
+    }
+    .font{
+        font-size: 1rem;
+    }
+    .temp-font-size{
+        font-size: 1rem;
+    }
+    /* .weatherIconImg{
+        max-width: 20%;
+        min-height: 10px;  
+    } */
+
+    .sunIcon{
+        max-width: 40%;
+    }
+
 }
 
 /* Galaxy Fold */

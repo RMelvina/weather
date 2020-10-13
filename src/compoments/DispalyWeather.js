@@ -23,11 +23,9 @@ function DispalyWeather(props) {
         // style={{
         //     visibility: props.main ? 'visible' : 'hidden'
         // }}
-        <section className="container-fluid" >
+        <section className="container-fluid">
             
-            <div className="row justify-content-center mt-5" style={{
-            visibility: props.main ? 'visible' : 'hidden'
-        }}>
+            <div className="row justify-content-center mt-5">
                 <div className="col-lg-6 col-md-8 col-sm-8 col-12 weather-container">
                 <h1>{props.cityName}</h1>
                 
@@ -37,8 +35,8 @@ function DispalyWeather(props) {
               
               <div className="row tempAndDecsContainer align-items-center justify-content-center ">
                     <div className=" pr-5 col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center ">
-                        <h1 className="temp-font-size ">{props.weather_temp}</h1>
-                        <span >&#8451;</span>
+                        <h1 className=" temp-font-size ">{props.weather_temp}</h1>
+                        <span>&#8451;</span>
                     </div>
                 
 
@@ -46,6 +44,7 @@ function DispalyWeather(props) {
               
                     <div className=" pl-5 col-lg-6 col-md-12 col-sm-12 font d-flex align-items-center justify-content-center ">
                         <p>{props.weather_desc}</p>
+                        
                         
                         
                        
@@ -56,7 +55,7 @@ function DispalyWeather(props) {
 
 
                 <div className="row justify-content-center ">
-                    <div className="col-lg-2  d-flex align-items-center justify-content-center  font ">
+                    <div className="col-lg-2 col-md-2 col-sm-2 d-flex align-items-center justify-content-center font ">
                         {/* <h1>{props.weather_icon}</h1> */}
                         <img src={props.weather_icon} className="img-fluid weatherIconImg" alt="" />
 
@@ -72,13 +71,13 @@ function DispalyWeather(props) {
 
             <div className="container">
                 <div className="row">
-                    <div className="container date-container">
+                    <div className="container date-container font">
                         <h4 className="date-date">{props.date}</h4>
                         
                     </div>
 
-                    <div className="col-sm pt-5 ">
-                        <div className="sunrise-container">
+                    <div className="col-sm-6 col-6 pt-5 font ">
+                        <div className="sunrise-container ">
                         <p className="sunrise">{props.sunRise}</p>
                             <h6>Sunrise</h6>
                             <img src={props.iconSunRise} className="img-fluid sunIcon" alt=""/>
@@ -88,10 +87,10 @@ function DispalyWeather(props) {
                         </div>
                     </div>
 
-                    <div className="col-sm pt-5">
+                    <div className="col-sm-6 col-6 pt-5 font">
                         <div className="sunset-container">
                             <p className="sunset">{props.sunSet}</p>
-                            <h6>Sunset</h6>
+                            <h6 >Sunset</h6>
                             <img src={props.iconSunSet} className="img-fluid sunIcon" alt=""/>
                            
                            
