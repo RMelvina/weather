@@ -12,7 +12,9 @@ function SearchBox(props) {
                     value={props.value}
                     onChange={props.onChange} />
 
-                <span className="search_icon"><button className="btn search-btn" onClick={props.onClick}  >
+                <span className="search_icon"><button className="btn search-btn" onClick={props.onClick} style={{
+                visibility: props.showBtn ? 'visible' : 'hidden'
+            }}  >
                     <i className="fa fa-search"></i>
                 </button>
                 </span>
