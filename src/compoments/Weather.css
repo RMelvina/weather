@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(rgba(241, 241, 241), rgba(1, 192, 255, 0.491) );
+    /* min-height: calc(100vh - 76px); */
+    min-height: 100vh;
+     color: whitesmoke;
+     font-family: Arial, Helvetica, sans-serif;
+}
+.search_box{
+    max-width: fit-content;
+    height: 2rem;
+   
+}
+
+
+input[type=text]{
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px ;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus{
+    width: 100%;
+}
+.search_icon{
+    padding-left: 1rem;
+    color: black;
+}
+
+.weather-container{
+    padding: 1rem;
+    border-radius: 1rem;
+    /* min-height: calc(100vh - 76px); */
+    height: fit-content;
+    width: 40vw;
+    box-shadow: 10px 10px 5px rgba(185, 183, 183, 0.815);
+    background: linear-gradient( to bottom right , rgb(48, 40, 81),rgba(1, 191, 255),rgba(1, 191, 255),  rgb(48, 40, 81) );
+}
+
+.font{
+    font-size: 1.6rem;
+}
+
+.temp-font-size{
+    font-size: 6rem;
+    padding-left: 3rem;
+}
+
+.weatherIconImg{
+  max-width: 800%;
+  min-height: 200px;  
+}
+
+.sunIcon{
+    max-width: 40%;
+}
+.sunset-container,
+.sunrise-container{
+    font-weight: bold;
+  
+}
+.btn{
+    background: linear-gradient( to bottom right , rgba(1, 191, 255),rgba(1, 191, 255),  rgb(48, 40, 81) );
+}
