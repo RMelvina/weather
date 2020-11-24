@@ -139,7 +139,7 @@ export class Weather extends Component {
         if (hours > 12)
           {
               hours = hours%12;
-              mid = 'pm';
+            //   mid = 'pm';
           }
           if(hours == 0)
           {
