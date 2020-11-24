@@ -29,23 +29,11 @@ export class Weather extends Component {
             date: '',
             icon: '',
             main: false,
-            showBtn: false
+            showBtn: false,
+            AM: 'am',
+            PM: 'pm'
         }
 
-        this.weatherIcons = {
-          
-            // Thunderstom:{Thunderstom},
-            // ClearDay: {ClearDay},
-            // Rain: {Rain},
-            // PartlyCloudy: {PartlyCloudy},
-            // Clouds: {Cloudy},
-            // Drizzle: {Drizzle},
-            // Snow: {Snow},
-            // Atmosphere: {Atmosphere},
-            // color: 'white',
-    
-       
-        }
         this.onKeyUp = this.onKeyUp.bind(this);
 
       
@@ -107,16 +95,15 @@ export class Weather extends Component {
                 console.log(data)
               
                 this.setState({
-                    city: data.name,
-                    date: this.date(),
-                    temp: this.calTemperature(data.main.temp),
-                    sunRise: this.calTime(data.sys.sunrise),
-                    sunSet: this.calTime(data.sys.sunset),
-                    desc: data.weather[0].description,
-                    main: true
-    
-                   
+                  city: data.name,
+                  date: this.date(),
+                  temp: this.calTemperature(data.main.temp),
+                  sunRise: this.calTime(data.sys.sunrise, this.state.AM),
+                  sunSet: this.calTime(data.sys.sunset, this.state.PM),
+                  desc: data.weather[0].description,
+                  main: true,
                 });
+                
                 this.get_weatherIcons( data.weather[0].id)
                 
                 
@@ -141,23 +128,34 @@ export class Weather extends Component {
         return tempValue
     }
 
-    calTime = (timestamp) =>{
+    calTime = (timestamp, mid) =>{
         var date;
+      
         date = new Date(timestamp * 1000);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
-        var mid = 'am';
-        if(hours == 0)
-        {
-            hours = 12;
-    
-        }
-        else if(hours > 12)
-        {
-            hours = hours%12;
-            mid = 'pm';
-        }
-        var formattedtime = hours + ":" + minutes.substr(-2) + mid;
+        // var mid = 'am';
+       
+        if (hours > 12)
+          {
+              hours = hours%12;
+              mid = 'pm';
+          }
+          if(hours == 0)
+          {
+              hours = 12;
+          }
+          else if(hours > 12)
+          {
+              hours = hours%12;
+            //   mid = 'pm';
+          }
+
+        
+
+       
+        
+          var formattedtime = hours + ":" + minutes.substr(-2) + mid; ;
         return formattedtime;
     }
 
@@ -181,7 +179,6 @@ export class Weather extends Component {
                     sunSet={this.state.sunSet}
                     date={this.state.date}
                     main={this.state.main}
-                   
                     iconSunSet={SunSet}
                     iconSunRise={SunRise}
                     />
